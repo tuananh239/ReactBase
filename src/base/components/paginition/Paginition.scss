@@ -1,0 +1,102 @@
+
+.paginition-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    width: 30px;
+    height: 30px;
+
+    border-radius: 5px;
+    border: none;
+    margin: 0 5px;
+
+    cursor: pointer;
+
+    background: lightgray;
+    color: gray;
+
+    &:hover:not(.active){
+        background: gray;
+        color: white;
+    }
+
+    &-disabled{
+        opacity: 0.2;
+    }
+
+    &-active{
+        background: gray;
+        color: white;
+    }
+
+    &-prev{
+        background: url('../../images/icons/left-arrow.png');
+        background-size: cover;
+    }
+
+    &-next{
+        background: url('../../images/icons/right-arrow.png');
+        background-size: cover;
+    }
+}
+
+.info{
+    span{
+        font-weight: bold;
+        color: gray;
+    }
+}
+
+.jump-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input{
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+
+        border-radius: 5px;
+        border: 2px solid gray;
+
+        box-sizing: border-box;
+
+        &:focus{
+            outline: none;
+            border: 2px solid lightskyblue;
+        }
+    }
+
+    span{
+        font-weight: bold;
+        color: gray;
+    }
+}
+
+@media screen and (max-width: 479px){
+    .paginition-container{
+        display: flex;
+        // flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .button{
+            display: none;
+
+            &-prev{
+                display: block;
+            }
+
+            &-next{
+                display: block;
+            }
+
+            &-active{
+                display: block;
+            }
+        }
+    }
+}
